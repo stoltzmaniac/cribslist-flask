@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import os
+import django_heroku
 
 DEBUG = True
 
@@ -209,3 +210,5 @@ except ImportError as e:
         from project.settings_prod import *  # noqa
     except ImportError as e:
         pass
+
+django_heroku.settings(locals())
