@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Django Classified App
 
 [![Build Status](https://travis-ci.org/inoks/dcf.svg?branch=master)](https://travis-ci.org/inoks/dcf)
@@ -71,3 +72,6 @@ Visit [Admin Page](http://localhost:8000/admin/) and create some Sections/Group
  * [https://craiglists.ru/](https://craiglists.ru?utm_source=github)
  * Hosted at [Digital Ocean](https://m.do.co/c/08ce1ee690de) (referral link, you get $10 after registration)
  
+=======
+# cribslist-flask
+>>>>>>> 4db7f568423ecf92db197603f8ab5fc3ecae3e1c
