@@ -4,10 +4,13 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from dcf import views as core_views
+
 admin.autodiscover()
 
 urlpatterns = [
     # Authorization
+    url(r'^signup/$', core_views.signup, name='signup'),
     url(r'^user/', include('social_django.urls', namespace='social')),
     url(r'^admin/', include(admin.site.urls)),
 

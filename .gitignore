@@ -6,3 +6,4 @@ settings_prod.py
 media/
 static/*
 migrations/
+venv/*

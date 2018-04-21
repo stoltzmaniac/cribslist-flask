@@ -4,3 +4,27 @@
     top: -20px;
     left: -15px;
 }
+
+input.btn {
+    background-color: gray;
+    color: white;
+}
+
+button.btn {
+    background-color: gray;
+    color: white;
+}
+
+button.btn-pag {
+    background-color: lightgray;
+    color: white;
+}
+
+.col-lg-4 {
+    background-color: whitesmoke;
+    border-radius: 5px;
+
+    margin-bottom: 5px;
+}
+
+.col

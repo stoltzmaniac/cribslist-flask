@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.forms import inlineformset_factory
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext as _
 from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView, TemplateView
@@ -14,6 +14,9 @@ from django.views.generic.edit import FormMixin
 from dcf import settings as dcf_settings
 from dcf.forms import ItemForm, ProfileForm, SearchForm
 from dcf.models import Item, Image, Group, Section, Profile
+
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 
 
 class FilteredListView(FormMixin, ListView):
@@ -207,3 +210,18 @@ class ProfileView(UpdateView):
 class RobotsView(TemplateView):
     template_name = 'dcf/robots.txt'
     content_type = 'text/plain'
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'dcf/signup.html', {'form': form})
