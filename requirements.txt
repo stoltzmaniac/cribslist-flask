@@ -22,5 +22,5 @@ social-auth-app-django==1.2.0
 social-auth-core==1.7.0
 sorl-thumbnail==12.4a1
 Unidecode==0.4.21
-urllib3==1.22
+urllib3==1.26.5
 whitenoise==3.3.1
